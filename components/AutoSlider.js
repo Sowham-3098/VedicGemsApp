@@ -4,7 +4,7 @@ import { View, Image, FlatList, StyleSheet } from 'react-native';
 const LOGO_WIDTH = 100;
 const LOGO_SPACING = 30;
 
-const AutoSlider = ({ logos }) => { // Destructure logos prop
+const AutoSlider = ({ logos }) => { 
   const flatListRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -15,9 +15,9 @@ const AutoSlider = ({ logos }) => { // Destructure logos prop
         animated: true,
       });
       setCurrentIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 3000); 
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
+    return () => clearInterval(intervalId); 
   }, [currentIndex, logos.length]);
 
   const handleScrollEnd = (e) => {
